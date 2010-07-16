@@ -31,7 +31,7 @@ class GamesControllerTest < ActionController::TestCase
   end
 
   test "should update game" do
-    put :update, :id => games(:one).to_param, :game => { }
+    put :update, :id => games(:one).to_param, :game => { :status => 'active' }
     assert_redirected_to game_path(assigns(:game))
   end
 

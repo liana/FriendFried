@@ -18,8 +18,6 @@ class UsersController < ApplicationController
   
   def show
     @user = @current_user
-    @game_totals = Score.game_totals(@user)
-    @total_score = Score.total_score(@user)
   end
  
   def edit

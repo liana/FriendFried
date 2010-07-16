@@ -14,7 +14,7 @@ class QuizzesControllerTest < ActionController::TestCase
 
   test "should create quiz" do
     assert_difference('Quiz.count') do
-      post :create, :quiz => { }
+      post :create, :quiz => { :name => 'test', :status => 'active' }
     end
 
     assert_redirected_to quiz_path(assigns(:quiz))
@@ -31,7 +31,7 @@ class QuizzesControllerTest < ActionController::TestCase
   end
 
   test "should update quiz" do
-    put :update, :id => quizzes(:one).to_param, :quiz => {:status => 'active' }
+    put :update, :id => quizzes(:one).to_param, :quiz => {:status => 'active', :name => 'test' }
     assert_redirected_to quiz_path(assigns(:quiz))
   end
 

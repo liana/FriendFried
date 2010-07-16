@@ -5,8 +5,8 @@ class Quiz < ActiveRecord::Base
   has_many :questions, :dependent => :destroy, :order => "display_order ASC"
   belongs_to :master, :class_name => 'User', :foreign_key => 'master_id'
 
-#  validates_presence_of :name
-#  validates_uniqueness_of :name
+  validates_presence_of :name
+  validates_uniqueness_of :name
 
  # Define a named scope for each state in STATUS
  STATUS = ['active', 'inactive']
@@ -28,9 +28,13 @@ class Quiz < ActiveRecord::Base
     self.end_at = DateTime.now
   end
 
-  def name=(value)
-    # replace non-alphanumeric with "-". remove repeat "-"s. don't start or end with "-"
-    self.name = normalize_string(value)
-  end
-
+#  def name=(value)
+#    # replace non-alphanumeric with "-". remove repeat "-"s. don't start or end with "-"
+#    self.name = normalize_string(value)
+#  end
+#
+#  # code stolen from one of the ruby MLs.
+#  def normalize_string(foo)
+#    foo.downcase.strip
+#  end
 end

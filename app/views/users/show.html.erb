@@ -5,11 +5,8 @@
 <div>
   <div>
     <h3>Quizzes</h3>
-  </div>
-  <div>
-    <h3>Scores</h3>
-    <%= render :partial => 'scores', :collection => @game_totals %>
-    Total Score: <%=h @total_score %>
+    <%= render :partial => 'quizzes', :collection => @user.games.sort_by(&:status) %>
+    Total Score: <%=h @user.total_score %>
   </div>
 <% else %>
   <b>Email:</b>

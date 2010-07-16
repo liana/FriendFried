@@ -14,4 +14,14 @@ class GameTest < ActiveSupport::TestCase
     assert game.apply_scores, [Score.find_by_game_id_and_user_id_and_points(game.id, player1.user_id, 10),
                                Score.find_by_game_id_and_user_id_and_points(game.id, player2.user_id, 0)]
   end
+
+  def test_user_score
+    user = User.new
+    game = Game.new
+    Score.create(:game_id => game.id, :points => 10, :user_id => user.id)
+    Score.create(:game_id => game.id, :points => 20, :user_id => user.id)
+    Score.create(:game_id => Game.new, :points => 30, :user_id => user.id)
+    Score.create(:game_id => Game.new, :points => 30, :user_id => 9999)
+    assert game.user_score(user), 30
+  end
 end
