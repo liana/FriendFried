@@ -3,24 +3,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :votes
 
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
-  map.resources :votes
-
   map.resources :games
 
   map.resources :rules

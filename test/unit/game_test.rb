@@ -11,8 +11,7 @@ class GameTest < ActiveSupport::TestCase
     answer = Answer.create(:game_id => game.id, :player_id => player3.id)
     votes = [Vote.create(:player_id => player1.id, :answer_id => answer.id, :game_id => game.id, :friend_id => player3.id),
              Vote.create(:player_id => player2.id, :answer_id =>  answer.id, :game_id => game.id, :friend_id => player1.id)]
-    assert game.apply_scores, [Score.find_by_game_id_and_user_id_and_points(game.id, player1.user_id, 10),
-                               Score.find_by_game_id_and_user_id_and_points(game.id, player2.user_id, 0)]
+    assert_equal [10, 0, 0], game.apply_scores.sort_by(&:user_id).collect{|s| s.points}
   end
 
   def test_user_score
@@ -22,6 +21,14 @@ class GameTest < ActiveSupport::TestCase
     Score.create(:game_id => game.id, :points => 20, :user_id => user.id)
     Score.create(:game_id => Game.new, :points => 30, :user_id => user.id)
     Score.create(:game_id => Game.new, :points => 30, :user_id => 9999)
-    assert game.user_score(user), 30
+    assert_equal 30, game.user_score(user)
+  end
+
+  def test_top_score
+    game = Game.create
+    score1 = Score.create(:game_id => game.id, :points => 10, :user_id => 1)
+    score2 = Score.create(:game_id => game.id, :points => 50, :user_id => 2)
+    score3 = Score.create(:game_id => game.id, :points => 20, :user_id => 3)
+    assert_equal score2, game.top_score
   end
 end

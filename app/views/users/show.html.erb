@@ -1,30 +1,19 @@
 <div class="dashboard">
 <h2>Dashboard <%= @user.id %></h2>
 <% if facebook_session %>
-
 <div>
   <div>
     <h3>Quizzes</h3>
     <%= render :partial => 'quizzes', :collection => @user.games.sort_by(&:status) %>
     Total Score: <%=h @user.total_score %>
+   <%= link_to 'initiate a new game', game_path %>
   </div>
-<% else %>
-  <b>Email:</b>
-  <%=h @user.email %>
 </div>
+<div>
 
+</div>
+<a href="/logout_fb" onclick="FB.Connect.logout(function() { reload(); }); return false;" >
+  <img id="fb_logout_image" src="http://static.ak.fbcdn.net/images/fbconnect/logout-buttons/logout_small.gif" alt="Connect"/>
+</a>
 <% end %>
-
-
- 
- 
-<%= link_to 'Edit', edit_account_path %>
-
-<% if facebook_session %>
-<a href="/logout_fb" onclick="FB.Connect.logout(function() { reload(); }); return false;" ><img id="fb_logout_image" src="http://static.ak.fbcdn.net/images/fbconnect/logout-buttons/logout_small.gif" alt="Connect"/></a>
-<% else %>
-<%= link_to 'logout', logout_path, :method => :delete %> 
-<% end %>
-
-
 </div>

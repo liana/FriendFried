@@ -29,10 +29,15 @@ class User < ActiveRecord::Base
   end
 
   def game_totals
-    Score.find(:all, :select => 'name, game_id, SUM(points) as points', :joins=>[:game], :group => 'game_id, name', :conditions => {:user_id => self.id})
+    Score.find(:all, 
+               :select => 'name, game_id, SUM(points) as points',
+               :joins=>[:game],
+               :group => 'game_id, name',
+               :conditions => {:user_id => self.id},
+               :order => :game_id).collect { |s| {:name =>s.name, :game_id => s.game_id, :points => s.points}  }
   end
 
   def total_score
-    Score.find(:all, :select => 'SUM(points) as points', :conditions => {:user_id => self.id})
+    Score.find(:first, :select => 'SUM(points) as points', :conditions => {:user_id => self.id}).points
   end
 end
