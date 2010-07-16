@@ -1,33 +1,10 @@
-This is a Skeleton Application bridging a rails web application using Authlogic and Facebook Connect, as well as a native
-Facebook Canvas Application.
+This repo is a work in process.  It is a simple FaceBook game which tests how well you know your friends via group quizzes.
 
-The web application is hosted free at http://facebooker-authlogic-bridge.heroku.com/
+This app was built upon fluidtickets skeleton application bridging a rails web application using Authlogic and Facebook Connect, as well as a native
+Facebook Canvas Application hosted at Github here, http://github.com/fluidtickets/facebooker-authlogic-bridge
 
-The Facebook application is located at http://apps.facebook.com/fb-authlogic-bridge/
+More details to come...
 
-The code is hosted at Github here, http://github.com/fluidtickets/facebooker-authlogic-bridge
- 
-and can be cloned here: git@github.com:fluidtickets/facebooker-authlogic-bridge.git
-
-
-Google Group Discussion Here: http://groups.google.com/group/facebooker/browse_thread/thread/537a502de800f683
-
-
-
-This application is structured around the Authlogic example tutorial. It's definitely possible to clean this up within the Authlogic code, but i'll leave that to someone else.
-
-I've use Facebooker to handle both Facebook Connect and Canvas applications.
-
-ApplicationController#current_user handles getting the current user from the various possible sessions.
-
-current_user can be used anywhere in the application, no matter how the user logged in.
-
-Like in AuthLogic, require_user and require_no_user can be used as before filters.
-
-The before filter :check_if_fb_app_installed? ensures that the canvas app was explicitly added by the user. Facebook won't pass the correct session_key otherwise.
-
-BUG ALERT: There is currently a bug when logging out of facebook connect on the web app. You need to click Facebook's logout button twice.
-If anyone has a fix for this, please email me at charlie@fluidtickets.com
 
 == LICENSE:
 
