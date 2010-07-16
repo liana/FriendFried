@@ -1,0 +1,28 @@
+<p>
+  <b>Quiz:</b>
+  <%=h @question.quiz_id %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%=h @question.parent_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @question.content %>
+</p>
+
+<p>
+  <b>Display order:</b>
+  <%=h @question.display_order %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @question.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

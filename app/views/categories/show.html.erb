@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @category.comment %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%=h @category.game_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @category.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

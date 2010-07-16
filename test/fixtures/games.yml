@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  quiz_id: 1
+  owner_id: 1
+  status: MyString
+  start_at: 2010-06-18 17:56:21
+  end_at: 2010-06-18 17:56:21
+
+two:
+  quiz_id: 1
+  owner_id: 1
+  status: MyString
+  start_at: 2010-06-18 17:56:21
+  end_at: 2010-06-18 17:56:21

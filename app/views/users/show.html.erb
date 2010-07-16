@@ -1,0 +1,33 @@
+<div class="dashboard">
+<h2>Dashboard <%= @user.id %></h2>
+<% if facebook_session %>
+
+<div>
+  <div>
+    <h3>Quizzes</h3>
+  </div>
+  <div>
+    <h3>Scores</h3>
+    <%= render :partial => 'scores', :collection => @game_totals %>
+    Total Score: <%=h @total_score %>
+  </div>
+<% else %>
+  <b>Email:</b>
+  <%=h @user.email %>
+</div>
+
+<% end %>
+
+
+ 
+ 
+<%= link_to 'Edit', edit_account_path %>
+
+<% if facebook_session %>
+<a href="/logout_fb" onclick="FB.Connect.logout(function() { reload(); }); return false;" ><img id="fb_logout_image" src="http://static.ak.fbcdn.net/images/fbconnect/logout-buttons/logout_small.gif" alt="Connect"/></a>
+<% else %>
+<%= link_to 'logout', logout_path, :method => :delete %> 
+<% end %>
+
+
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  comment: MyText
+  points: 1
+  status: MyString
+  game_id: 1
+  question_id: 1
+
+two:
+  name: MyString
+  comment: MyText
+  points: 1
+  status: MyString
+  game_id: 1
+  question_id: 1

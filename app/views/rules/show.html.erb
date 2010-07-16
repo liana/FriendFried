@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @rule.name %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @rule.comment %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%=h @rule.points %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @rule.status %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%=h @rule.game_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%=h @rule.question_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_rule_path(@rule) %> |
+<%= link_to 'Back', rules_path %>

@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @quiz.name %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @quiz.comment %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @quiz.category_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @quiz.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

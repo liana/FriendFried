@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  quiz_id: 1
+  parent_id: 1
+  content: MyString
+  display_order: 1
+  category: MyString
+
+two:
+  quiz_id: 1
+  parent_id: 1
+  content: MyString
+  display_order: 1
+  category: MyString

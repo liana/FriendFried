@@ -1,0 +1,13 @@
+<p>
+  <b>User:</b>
+  <%=h @score.user_id %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%=h @score.points %>
+</p>
+
+
+<%= link_to 'Edit', edit_score_path(@score) %> |
+<%= link_to 'Back', scores_path %>

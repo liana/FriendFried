@@ -1,0 +1,28 @@
+<p>
+  <b>Player:</b>
+  <%=h @vote.player_id %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%=h @vote.game_id %>
+</p>
+
+<p>
+  <b>Quiz:</b>
+  <%=h @vote.quiz_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%=h @vote.question_id %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%=h @vote.answer_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>

@@ -1,0 +1,28 @@
+<h1>Listing votes</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Game</th>
+    <th>Quiz</th>
+    <th>Question</th>
+    <th>Answer</th>
+  </tr>
+
+<% @votes.each do |vote| %>
+  <tr>
+    <td><%=h vote.player_id %></td>
+    <td><%=h vote.game_id %></td>
+    <td><%=h vote.quiz_id %></td>
+    <td><%=h vote.question_id %></td>
+    <td><%=h vote.answer_id %></td>
+    <td><%= link_to 'Show', vote %></td>
+    <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
+    <td><%= link_to 'Destroy', vote, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New vote', new_vote_path %>
