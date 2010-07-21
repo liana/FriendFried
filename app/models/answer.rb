@@ -1,5 +1,7 @@
 class Answer < ActiveRecord::Base
   belongs_to :question
+  belongs_to :game
+  belongs_to :player
   has_many :votes
 
 #  validates_presence_of :content

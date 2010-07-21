@@ -1,28 +1,4 @@
-<p>
-  <b>Quiz:</b>
-  <%=h @game.quiz_id %>
-</p>
-
-<p>
-  <b>Owner:</b>
-  <%=h @game.owner_id %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%=h @game.status %>
-</p>
-
-<p>
-  <b>Start at:</b>
-  <%=h @game.start_at %>
-</p>
-
-<p>
-  <b>End at:</b>
-  <%=h @game.end_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<div class="game">
+    <h3>Questions</h3>
+    <div><%= render :partial => @partial, :collection => @quiz.questions.sort_by(&:display_order) if @quiz %></div>
+</div>

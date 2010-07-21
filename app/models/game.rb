@@ -1,15 +1,22 @@
 class Game < ActiveRecord::Base
   has_many :players
   has_many :scores
+  has_many :answers
   belongs_to :quiz
   belongs_to :user, :foreign_key => 'owner_id'
 
  # Define a named scope for each state in STATUS
- STATUS = ['active', 'inactive', 'ended', 'waiting']
+ STATUS = ['active', 'inactive', 'ended', 'collecting', 'rotisserie']
  validates_inclusion_of :status, :in => STATUS
  STATUS.each { |s| named_scope s, :conditions => { :status => s } }
 
  POINTS = 10
+
+  def answer_attributes=(answer_attributes)
+    answer_attributes.each do |attributes|
+      answers.build(attributes)
+    end
+  end
 
   def apply_scores
     votes = Vote.by_game(self.id)

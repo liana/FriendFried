@@ -4,7 +4,7 @@
 <div>
   <div>
     <h3>Quizzes</h3>
-    <%= render :partial => 'quizzes', :collection => @user.games.sort_by(&:status) %>
+    <%= render :partial => 'games', :collection => @user.games.sort_by(&:status) %>
     Total Score: <%=h @user.total_score %>
    <%= link_to 'initiate a new game', game_path %>
   </div>

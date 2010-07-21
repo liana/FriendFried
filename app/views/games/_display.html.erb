@@ -1,0 +1,6 @@
+<li>
+  <ul>
+    <div><%= question %></div>
+    <div><%= render :partial => display_answers, :collection => question.answers unless @answer_partial.nil? %></div>
+  </ul>
+</li>

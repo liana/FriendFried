@@ -1,0 +1,10 @@
+<% form_for @game do |f| %>
+  <%= f.error_messages %>
+  <p><h3><%= f.label :name %>: <%= f.text_field :name %></h3></p>
+    <div id="accordion">
+      <% f.fields_for :questions do |builder| %>
+          <%= render "question_fields", :f => builder %>
+      <% end %>
+    </div>
+  <p><%= f.submit "Save" %></p>
+<% end %>

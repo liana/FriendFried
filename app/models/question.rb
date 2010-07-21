@@ -5,7 +5,7 @@ class Question < ActiveRecord::Base
 
  default_scope :order => 'display_order ASC'
 
- accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:label].blank? }, :allow_destroy => true
+ accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a['content'].blank? }, :allow_destroy => true
 
  def answered_by
    answers.each{|a| a.user}

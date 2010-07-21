@@ -13,7 +13,7 @@ class Quiz < ActiveRecord::Base
  validates_inclusion_of :status, :in => STATUS
  STATUS.each { |s| named_scope s, :conditions => { :status => s } }
 
-  #accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a['content'].blank? }, :allow_destroy => true
 
 
   def active?

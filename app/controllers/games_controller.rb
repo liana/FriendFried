@@ -14,6 +14,13 @@ class GamesController < ApplicationController
   # GET /games/1.xml
   def show
     @game = Game.find(params[:id])
+    @quiz = @game.quiz
+    @answer_partial = case @game.status
+                         when "collecting" then "submit"
+                         when "rotisserie" then "rotisserie"
+                         when "ended" then "display"
+                         else nil
+                      end
 
     respond_to do |format|
       format.html # show.html.erb

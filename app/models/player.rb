@@ -3,6 +3,7 @@ class Player < ActiveRecord::Base
   belongs_to :quiz
   belongs_to :game
   has_many :votes
+  has_many :answers
 
  # Define a named scope for each state in STATUS
  STATUS = ['active', 'inactive']
