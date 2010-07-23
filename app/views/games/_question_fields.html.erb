@@ -1,14 +1,10 @@
-<h3><a href="#"><%= f.object.content %></a></h3>
+<h3><a href="#"><%= f.object.name %></a></h3>
 <div>
-    <p>
-      <%= f.label :content, "Question" %><br />
-      <%= f.text_area :content, :rows => 3 %>
-<!--      <%= link_to_remove_fields "remove", f %> -->
-      <%= f.check_box :_delete %>
-      <%= f.label :_delete, "remove question" %>
-    </p>
+  <p>
+    <%= f.label :content, "Question" %><br />
+    <%= f.text_area :content, :rows => 3 %>
+  </p>
   <% f.fields_for :answers do |builder| %>
     <%= render 'answer_fields', :f => builder %>
   <% end %>
-<p><%= link_to_add_fields "Add Answer", f, :answers %></p>
 </div>
