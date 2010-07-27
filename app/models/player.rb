@@ -1,7 +1,7 @@
 class Player < ActiveRecord::Base
   belongs_to :user
   belongs_to :quiz
-  belongs_to :game
+  belongs_to :game, :counter_cache => true
   has_many :votes
   has_many :answers
 

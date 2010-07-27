@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer :owner_id
       t.string  :name, :default => Date.today.to_s
       t.string  :status, :default => 'active'
+      t.integer :players_count, :integer, :default => 0
       t.datetime :start_at
       t.datetime :end_at
 
