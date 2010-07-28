@@ -3,11 +3,11 @@
 one:
   name: MyString
   comment: MyText
-  game_id: 1
+  quiz_id: 1
   status: MyString
 
 two:
   name: MyString
   comment: MyText
-  game_id: 1
+  quiz_id: 1
   status: MyString

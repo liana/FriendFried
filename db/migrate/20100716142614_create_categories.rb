@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.string :name
       t.text :comment
-      t.integer :game_id
+      t.integer :quiz_id
       t.string :status, :default => 'active'
 
       t.timestamps
