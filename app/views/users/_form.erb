@@ -6,3 +6,5 @@
 <br />
 <%= form.label :password_confirmation %><br />
 <%= form.password_field :password_confirmation %><br />
+<!-- in users/_form.html.erb -->
+<%= form.collection_select :role, User::ROLES, :to_s, :humanize %>

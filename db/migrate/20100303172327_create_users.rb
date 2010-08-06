@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
           t.string    :crypted_password                   # optional, see below
           t.string    :password_salt                      # optional, but highly recommended
           t.string    :persistence_token,   :null => false                # required
-         
+          t.string    :role,   :null => false, :default => 'player'
 
           # Magic columns, just like ActiveRecord's created_at and updated_at. These are automatically maintained by Authlogic if they are present.
           t.integer   :login_count,         :null => false, :default => 0 # optional, see Authlogic::Session::MagicColumns

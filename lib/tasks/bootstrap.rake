@@ -26,10 +26,10 @@ namespace :bootstrap do
     category = Category.find_by_name('friendly')
     quiz = Quiz.find_by_name('BFF Quiz')
     #setup a game with players
-    game = Game.create( :name => 'Default Game', :quiz_id => quiz.id, :status => 'active' )
     admin = User.create( :email => 'admin@friendfried.com', :password => 'admin' )
     dummy1 = User.create( :email => 'dummy1@friendfried.com', :password => 'dummy' )
     dummy2 = User.create( :email => 'dummy2@friendfried.com', :password => 'dummy' )
+    game = Game.create( :name => 'Default Game', :quiz_id => quiz.id, :status => 'active', :owner_id => admin.id )
     Player.create(:game_id => game.id, :user_id => admin.id, :status => 'active')
     Player.create(:game_id => game.id, :user_id => dummy1.id, :status => 'active')
     Player.create(:game_id => game.id, :user_id => dummy2.id, :status => 'inactive')

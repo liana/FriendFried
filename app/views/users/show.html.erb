@@ -1,12 +1,11 @@
 <div class="dashboard">
 <h2>Dashboard <%= @user.id %></h2>
-<% if facebook_session %>
 <div>
   <div>
     <h3>Quizzes</h3>
-    <%= render :partial => 'games', :collection => @user.games.sort_by(&:status) %>
+    <%= render :partial => 'games', :collection => @games, :as => :game %>
     Total Score: <%=h @user.total_score %>
-   <%= link_to 'initiate a new game', game_path %>
+   <%= link_to 'initiate a new game', new_game_path %>
   </div>
 </div>
 <div>
@@ -15,5 +14,4 @@
 <a href="/logout_fb" onclick="FB.Connect.logout(function() { reload(); }); return false;" >
   <img id="fb_logout_image" src="http://static.ak.fbcdn.net/images/fbconnect/logout-buttons/logout_small.gif" alt="Connect"/>
 </a>
-<% end %>
 </div>
