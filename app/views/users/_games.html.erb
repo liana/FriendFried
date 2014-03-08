@@ -1,5 +1,5 @@
 <li>
-  <ul><%= link_to game.name, edit_game_path %></ul>
+  <ul><%= link_to game.name, edit_game_path(game) %></ul>
   <ul><%=h game.user_score(@user) %></ul>
   <ul><%=h game.status %></ul>
 </li>

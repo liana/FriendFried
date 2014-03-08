@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :scores
   has_many :games, :foreign_key => 'owner_id'
   
+  ROLES = %w[admin moderator player banned]
+
   acts_as_authentic do |c|
         #c.my_config_option = my_value # for available options see documentation in: Authlogic::ActsAsAuthentic
       end # block optional

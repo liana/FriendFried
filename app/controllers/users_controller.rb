@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   
   def show
     @user = @current_user
+    @games = @user.games.sort_by(&:status)
+    @user2 = @current_user
   end
  
   def edit
